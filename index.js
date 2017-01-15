@@ -1,17 +1,17 @@
 var express = require("express"),
-app = express(),
-path = require("path"),
-bodyParser = require('body-parser'),
-loadtest = require('loadtest'),
-mongojs = require('mongojs'),
-db = mongojs('perfomancedata', ['perfomancedata']),
-ObjectId = mongojs.ObjectId,
-EventEmitter = require('events').EventEmitter,
-SitemapGenerator = require('sitemap-generator'),
-port = process.env.PORT || 7500,
- commonUrls = [],
-finalData = [],
-urls;
+    app = express(),
+    path = require("path"),
+    bodyParser = require('body-parser'),
+    loadtest = require('loadtest'),
+    mongojs = require('mongojs'),
+    db = mongojs('perfomancedata', ['perfomancedata']),
+    ObjectId = mongojs.ObjectId,
+    EventEmitter = require('events').EventEmitter,
+    SitemapGenerator = require('sitemap-generator'),
+    port = process.env.PORT || 7500,
+    commonUrls = [],
+    finalData = [],
+    urls;
 
 app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({
@@ -19,7 +19,6 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.post("/analyse", function(req, res) {
-
             var reqBody = req.body;
             var newReqBody = '';
             for(var prop in reqBody) {
@@ -90,7 +89,7 @@ db.on('connect', function () {
 });
 
 app.listen(port, function() {
-	console.log("Server is running at port", port, "!");
+   console.log("Server is running at port", port, "!");
 });
 
 function commonFunc(j, callback) {
