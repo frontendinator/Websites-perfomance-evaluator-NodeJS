@@ -2,7 +2,7 @@ window.onload = function history() {
 	var yobj = new XMLHttpRequest();
   	yobj.open('GET', '/gethistory', true);
   	yobj.send(null);
- 		yobj.onreadystatechange = () => {
+ 	yobj.onreadystatechange = () => {
         	if(yobj.readyState == 4 && yobj.status == "200") {
 	            var history = JSON.parse(yobj.responseText);
 	            history.reverse()
@@ -14,5 +14,5 @@ window.onload = function history() {
 	            	   });
 	            
         	};
-  		};
+  	};
 }
