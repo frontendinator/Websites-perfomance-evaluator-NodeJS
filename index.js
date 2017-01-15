@@ -1,17 +1,17 @@
 var express = require("express"),
-	app = express(),
-	path = require("path"),
-    bodyParser = require('body-parser'),
-    loadtest = require('loadtest'),
-    mongojs = require('mongojs'),
-    db = mongojs('perfomancedata', ['perfomancedata']),
-    ObjectId = mongojs.ObjectId,
-    EventEmitter = require('events').EventEmitter,
-    SitemapGenerator = require('sitemap-generator'),
-	port = process.env.PORT || 7500,
-    commonUrls = [],
-    finalData = [],
-    urls;
+app = express(),
+path = require("path"),
+bodyParser = require('body-parser'),
+loadtest = require('loadtest'),
+mongojs = require('mongojs'),
+db = mongojs('perfomancedata', ['perfomancedata']),
+ObjectId = mongojs.ObjectId,
+EventEmitter = require('events').EventEmitter,
+SitemapGenerator = require('sitemap-generator'),
+port = process.env.PORT || 7500,
+ commonUrls = [],
+finalData = [],
+urls;
 
 app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({
