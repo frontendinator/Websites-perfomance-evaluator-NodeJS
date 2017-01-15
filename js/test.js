@@ -1,25 +1,25 @@
 
 var formButton = document.querySelector('form button');
 formButton.onclick = function analyseData(e) {
-		e.preventDefault();
+    e.preventDefault();
     var textForm = document.querySelector('#textform');
     var preloader = document.createElement('div');
     preloader.innerHTML = '<div class="preloader"><p>Please, wait...</p><img src="images/preloader.gif"></div>';
     document.body.appendChild(preloader)
-		var xobj = new XMLHttpRequest();
+    var xobj = new XMLHttpRequest();
     var params = textForm.value;
-  	xobj.open('POST', '/analyse', true);
+    xobj.open('POST', '/analyse', true);
     xobj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  	xobj.send(params);
- 		xobj.onreadystatechange = () => {
-        	if(xobj.readyState == 4 && xobj.status == "200") {
+    xobj.send(params);
+    xobj.onreadystatechange = () => {
+          if(xobj.readyState == 4 && xobj.status == "200") {
               var response = JSON.parse(xobj.responseText);
               document.body.removeChild(preloader);
               createChart(response);
               createTable(response);
-        	};
-  		};
-	};
+          };
+     };
+};
 
 function createChart(arr) {
       arr
