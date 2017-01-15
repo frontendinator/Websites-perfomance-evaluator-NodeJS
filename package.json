@@ -1,0 +1,23 @@
+{
+  "name": "site_perfomance_tool",
+  "version": "1.0.0",
+  "description": "Tool for site perfomance evaluation",
+  "scripts": {
+    "dev": "lite-server",
+    "start": "node index.js"
+  },
+  "author": "Maks",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "loadtest": "^2.2.1",
+    "mongojs": "^2.4.0",
+    "sitemap-generator": "^5.0.0"
+  },
+  "devDependencies": {
+    "lite-server": "^2.2.2",
+    "loadtest": "^2.2.1",
+    "reload": "^1.1.0"
+  }
+}
