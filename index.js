@@ -32,12 +32,9 @@ app.post("/analyse", function(req, res) {
 
             generator.on('fetch', function (status, url) {
               commonUrls.push(url);
-              if(commonUrls.length === 5) {
-                this.emit('partlydone');
-              }
             });
 
-            generator.on('partlydone', function () {
+            generator.on('done', function () {
                 urls = commonUrls.slice();
                 commonFunc(0, function(data) {
                     res.json(data);
