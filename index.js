@@ -98,8 +98,8 @@ function commonFunc(j, callback) {
 
     var options = {
         url: z,
-        maxRequests: 100,
-        maxSeconds: 10,
+        maxRequests: 20,
+        maxSeconds: 0.5,
         statusCallback: statusCallback
     };
 
